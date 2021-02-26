@@ -12,9 +12,11 @@
         <module name="xc-framework-utils" />
         <module name="xc-framework-common" />
         <module name="xc-service-manage-cms" />
+        <module name="test-freemarke" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="test-freemarke" target="1.8" />
       <module name="xc-framework-common" target="1.8" />
       <module name="xc-framework-model" target="1.8" />
       <module name="xc-framework-parent" target="1.8" />
@@ -25,6 +27,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="test-freemarke" options="-parameters" />
       <module name="xc-framework-common" options="-parameters" />
       <module name="xc-framework-model" options="-parameters" />
       <module name="xc-framework-utils" options="-parameters" />

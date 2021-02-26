@@ -8,3 +8,8 @@ spring:
     mongodb:
       url: localhost:27017
       database: xc_cms
+  freemarker:
+     cache: false #关闭模板缓存，方便测试settings:
+     template_update_delay: 0
+zuul:
+  servlet-path=/:
