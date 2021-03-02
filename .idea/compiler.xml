@@ -8,21 +8,29 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xc-framework-model" />
+        <module name="test-rabbitMq-consumer" />
+        <module name="xc-service-manage-cms-client" />
         <module name="xc-service-api" />
+        <module name="test-rabbitmq-consumerr" />
         <module name="xc-framework-utils" />
         <module name="xc-framework-common" />
         <module name="xc-service-manage-cms" />
-        <module name="test-freemarke" />
+        <module name="test-rabbitmq-producer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="test-freemarke" target="1.8" />
+      <module name="test-rabbitMq-consumer" target="1.5" />
+      <module name="test-rabbitmq-consumerr" target="1.5" />
+      <module name="test-rabbitmq-producer" target="1.5" />
       <module name="xc-framework-common" target="1.8" />
       <module name="xc-framework-model" target="1.8" />
       <module name="xc-framework-parent" target="1.8" />
       <module name="xc-framework-utils" target="1.8" />
       <module name="xc-service-api" target="1.8" />
       <module name="xc-service-manage-cms" target="1.8" />
+      <module name="xc-service-manage-cms-client" target="1.8" />
+      <module name="xc‐service‐manage‐cms‐client" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -33,6 +41,8 @@
       <module name="xc-framework-utils" options="-parameters" />
       <module name="xc-service-api" options="-parameters" />
       <module name="xc-service-manage-cms" options="-parameters" />
+      <module name="xc-service-manage-cms-client" options="-parameters" />
+      <module name="xc‐service‐manage‐cms‐client" options="-parameters" />
     </option>
   </component>
 </project>

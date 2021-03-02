@@ -9,6 +9,9 @@
         <option value="$PROJECT_DIR$/xc-framework-common/pom.xml" />
         <option value="$PROJECT_DIR$/xc-service-api/pom.xml" />
         <option value="$PROJECT_DIR$/xc-service-manage-cms/pom.xml" />
+        <option value="$PROJECT_DIR$/test-rabbitMq-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/test-rabbitmq-consumerr/pom.xml" />
+        <option value="$PROJECT_DIR$/test-rabbitmq-producer/pom.xml" />
       </list>
     </option>
   </component>
