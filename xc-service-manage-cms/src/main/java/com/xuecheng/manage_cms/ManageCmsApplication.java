@@ -26,7 +26,9 @@ public class ManageCmsApplication {
     //在SpringBoot启动类中配置 RestTemplate
     @Bean
     public RestTemplate restTemplate() {
+
         return new RestTemplate(new OkHttp3ClientHttpRequestFactory());
+
     }
 
 
