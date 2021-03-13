@@ -3,6 +3,7 @@ package com.xuecheng.api.cms;
 import com.xuecheng.framework.domain.cms.CmsPage;
 import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
+import com.xuecheng.framework.domain.course.CourseBase;
 import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.framework.model.response.ResponseResult;
 import io.swagger.annotations.Api;
@@ -20,14 +21,14 @@ public interface CmsPageControllerApi {
             @ApiImplicitParam(name="page",value = "页码",required=true,paramType="path",dataType="int"),
             @ApiImplicitParam(name="size",value = "每页记录数",required=true,paramType="path",dataType="int")
     })
-    public QueryResponseResult findList(int page, int size, QueryPageRequest queryPageRequest) ;
+    public QueryResponseResult<CourseBase> findList(int page, int size, QueryPageRequest queryPageRequest) ;
 
     @ApiOperation("分页查询页面列表11111")
     @ApiImplicitParams({
             @ApiImplicitParam(name="page",value = "页码",required=true,paramType="path",dataType="int"),
             @ApiImplicitParam(name="size",value = "每页记录数",required=true,paramType="path",dataType="int")
     })
-    public QueryResponseResult findList1(int page, int size, QueryPageRequest queryPageRequest) ;
+    public QueryResponseResult<CourseBase> findList1(int page, int size, QueryPageRequest queryPageRequest) ;
 
 
     //新增页面

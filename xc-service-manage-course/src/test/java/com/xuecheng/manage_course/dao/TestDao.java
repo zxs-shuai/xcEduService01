@@ -1,5 +1,6 @@
 package com.xuecheng.manage_course.dao;
 
+import com.github.pagehelper.PageHelper;
 import com.xuecheng.framework.domain.course.CourseBase;
 import com.xuecheng.framework.domain.course.ext.TeachplanExt;
 import com.xuecheng.framework.domain.course.ext.TeachplanNode;
@@ -7,9 +8,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sound.midi.Soundbank;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -25,6 +29,7 @@ public class TestDao {
     CourseMapper courseMapper;
     @Autowired
     TeachplanMapper teachplanMapper;
+
     @Test
     public void testCourseBaseRepository(){
         Optional<CourseBase> optional = courseBaseRepository.findById("402885816240d276016240f7e5000002");
@@ -45,5 +50,15 @@ public class TestDao {
     public void testTeachPlanMapper(){
         TeachplanNode ss =  teachplanMapper.selectList("4028e58161bd22e60161bd23672a0001");
        System.out.println(ss);
+    }
+
+
+    @Test
+    public void testCourseListMapper(){
+        PageHelper.startPage(1,10);
+        List<CourseBase> courseBase = (List<CourseBase>) courseMapper.findCourseList();
+        System.out.println(courseBase.size());
+        System.out.println(courseBase);
+
     }
 }
