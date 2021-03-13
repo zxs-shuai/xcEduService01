@@ -6,7 +6,7 @@
         select * from course_base where id = #{id}
     </select>
 
-    <select id="findCourseList" resultType="com.xuecheng.framework.domain.course.CourseBase">
+    <select id="findCourseList" resultType="com.xuecheng.framework.domain.course.CourseBase" parameterType="com.xuecheng.framework.domain.course.request.CourseListRequest">
         SELECT
         course_base.*,
         (SELECT pic FROM course_pic WHERE courseid = course_base.id) pic FROM

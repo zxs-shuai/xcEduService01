@@ -2,11 +2,14 @@ package com.xuecheng.manage_course.dao;
 
 import com.github.pagehelper.PageHelper;
 import com.xuecheng.framework.domain.course.CourseBase;
+import com.xuecheng.framework.domain.course.ext.CourseInfo;
 import com.xuecheng.framework.domain.course.ext.TeachplanNode;
+import com.xuecheng.framework.domain.course.request.CourseListRequest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.sound.midi.Soundbank;
@@ -53,8 +56,8 @@ public class TestDao {
     @Test
     public void testCourseListMapper(){
         PageHelper.startPage(1,10);
-        List<CourseBase> courseBase = (List<CourseBase>) courseMapper.findCourseList();
-        System.out.println(courseBase.size());
+        CourseListRequest courseListRequest = new CourseListRequest();
+        List<CourseInfo> courseBase = (List<CourseInfo>) courseMapper.findCourseList();
         System.out.println(courseBase);
 
     }

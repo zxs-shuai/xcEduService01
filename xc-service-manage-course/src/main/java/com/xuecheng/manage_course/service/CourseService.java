@@ -1,23 +1,23 @@
 package com.xuecheng.manage_course.service;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.xuecheng.framework.domain.course.CourseBase;
 import com.xuecheng.framework.domain.course.Teachplan;
+import com.xuecheng.framework.domain.course.ext.CourseInfo;
 import com.xuecheng.framework.domain.course.ext.TeachplanNode;
+import com.xuecheng.framework.domain.course.request.CourseListRequest;
 import com.xuecheng.framework.exception.ExceptionCast;
-import com.xuecheng.framework.model.response.CommonCode;
-import com.xuecheng.framework.model.response.Response;
-import com.xuecheng.framework.model.response.ResponseResult;
+import com.xuecheng.framework.model.response.*;
 import com.xuecheng.manage_course.dao.CourseBaseRepository;
+import com.xuecheng.manage_course.dao.CourseMapper;
 import com.xuecheng.manage_course.dao.TeachplanMapper;
 import com.xuecheng.manage_course.dao.TeachplanRepository;
-import org.mockito.internal.util.StringUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.swing.text.html.Option;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,6 +29,8 @@ public class CourseService {
     TeachplanRepository teachplanRepository;
     @Autowired
     CourseBaseRepository courseBaseRepository;
+    @Autowired
+    CourseMapper courseMapper;
 //
     //查询课程计划
     public TeachplanNode findTeachplanList(String courseId){
@@ -94,5 +96,18 @@ public class CourseService {
         Teachplan teachplan = teachplanList.get(0);
         //
         return teachplan.getId();
+    }
+
+    //课程列表分页查询
+    public QueryResponseResult<CourseInfo> findCourseList(int page, int size, CourseListRequest CourseListRequest) {
+
+        PageHelper.startPage(page,size);
+        List<CourseInfo> list = courseMapper.findCourseList();
+        long total = list.size();
+        //查询结果集
+        QueryResult<CourseInfo> courseIncfoQueryResult = new QueryResult<CourseInfo>();
+        courseIncfoQueryResult.setList(list);
+        courseIncfoQueryResult.setTotal(total);
+        return new QueryResponseResult<CourseInfo>(CommonCode.SUCCESS, courseIncfoQueryResult);
     }
 }
