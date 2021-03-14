@@ -15,4 +15,5 @@ import java.util.List;
 public interface CourseMapper {
    CourseBase findCourseBaseById(String id);
    List<CourseInfo> findCourseList();
+   Long findDataTotal();
 }

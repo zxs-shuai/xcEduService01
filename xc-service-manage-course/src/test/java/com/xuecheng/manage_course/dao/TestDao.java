@@ -2,6 +2,8 @@ package com.xuecheng.manage_course.dao;
 
 import com.github.pagehelper.PageHelper;
 import com.xuecheng.framework.domain.course.CourseBase;
+import com.xuecheng.framework.domain.course.SysDictionary;
+import com.xuecheng.framework.domain.course.ext.CategoryNode;
 import com.xuecheng.framework.domain.course.ext.CourseInfo;
 import com.xuecheng.framework.domain.course.ext.TeachplanNode;
 import com.xuecheng.framework.domain.course.request.CourseListRequest;
@@ -29,6 +31,11 @@ public class TestDao {
     CourseMapper courseMapper;
     @Autowired
     TeachplanMapper teachplanMapper;
+    @Autowired
+    CategoryMapper categoryMapper;
+
+    @Autowired
+    SysDictionaryDao sysDictionaryDao;
 
     @Test
     public void testCourseBaseRepository(){
@@ -59,6 +66,22 @@ public class TestDao {
         CourseListRequest courseListRequest = new CourseListRequest();
         List<CourseInfo> courseBase = (List<CourseInfo>) courseMapper.findCourseList();
         System.out.println(courseBase);
+
+    }
+
+    @Test
+    public void testCategoreMapper(){
+
+        CategoryNode categoryNode1 =  categoryMapper.selectList();
+        System.out.println(categoryNode1);
+
+    }
+
+    @Test
+    public void testSys(){
+
+        SysDictionary sysDictionary =  sysDictionaryDao.findBydType("200");
+        System.out.println(sysDictionary);
 
     }
 }
