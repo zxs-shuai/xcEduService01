@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xc-framework-model" />
+        <module name="xc-govern-center" />
         <module name="test-rabbitMq-consumer" />
         <module name="xc-service-manage-cms-client" />
         <module name="xc-service-api" />
@@ -28,6 +29,7 @@
       <module name="xc-framework-model" target="1.8" />
       <module name="xc-framework-parent" target="1.8" />
       <module name="xc-framework-utils" target="1.8" />
+      <module name="xc-govern-center" target="1.8" />
       <module name="xc-service-api" target="1.8" />
       <module name="xc-service-manage-cms" target="1.8" />
       <module name="xc-service-manage-cms-client" target="1.8" />
@@ -41,6 +43,7 @@
       <module name="xc-framework-common" options="-parameters" />
       <module name="xc-framework-model" options="-parameters" />
       <module name="xc-framework-utils" options="-parameters" />
+      <module name="xc-govern-center" options="-parameters" />
       <module name="xc-service-api" options="-parameters" />
       <module name="xc-service-manage-cms" options="-parameters" />
       <module name="xc-service-manage-cms-client" options="-parameters" />
